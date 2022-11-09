@@ -16,14 +16,14 @@ oid_option = st.sidebar.selectbox('choose the order_id:', oid)
 
 # option_df = sample_df['vehid' == '{}','orderid' == '{}'].format(vid_option,oid_option)
 # option_df = sample_df[sample_df['vehid' == 2,'orderid' == 4551]]
-option_df = sample_df[(sample_df['vehid']==‘2’)&(sample_df['orderid']==‘4551’)]
+option_df = sample_df[(sample_df['vehid']=='2')&(sample_df['orderid']=='4551')]
 st.write(option_df)
 st.map(option_df)
 
 st.header("评分")
 st.text("该车辆对应订单驾驶行为分析及其分数：")
 score_df = pd.read_csv("score3.csv")
-score = score_df[score_df['orderid']==‘4551’]
+score = score_df[score_df['orderid']=='4551']
 st.write(score_df)
 expander = st.expander("添加新的数据")
 with expander:
