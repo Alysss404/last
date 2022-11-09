@@ -9,6 +9,7 @@ vid_option = st.sidebar.selectbox('choose the vehicle_id:', vid)
 
 
 oid = "sample_df[['vehid']=='{}']".format(vid_option)
+st.write(oid)
 oid_new = oid['orderid']
 oid.drop_duplicates(keep='first', inplace=True)
 oid_option = st.sidebar.selectbox('choose the order_id:', oid)
