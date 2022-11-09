@@ -15,7 +15,7 @@ oid.drop_duplicates(keep='first', inplace=True)
 oid_option = st.sidebar.selectbox('choose the order_id:', oid)
 
 # option_df = sample_df['vehid' == '{}','orderid' == '{}'].format(vid_option,oid_option)
-option_df = sample_df['vehid' == 2,'orderid' == 4551]
+option_df = sample_df[sample_df['vehid' == 2,'orderid' == 4551]]
 st.write(option_df)
 st.map(option_df)
 
