@@ -8,8 +8,12 @@ vid.drop_duplicates(keep='first', inplace=True)
 vid_option = st.sidebar.selectbox('choose the vehicle_id:', vid)
 
 
-oid = sample_df[['vehid']=='{}'].format(vid_option)
-st.write(oid)
-oid_new = oid['orderid']
+# oid = sample_df[['vehid']=='{}'].format(vid_option)
+# st.write(oid)
+oid = sample_df['orderid']
 oid.drop_duplicates(keep='first', inplace=True)
 oid_option = st.sidebar.selectbox('choose the order_id:', oid)
+
+option_df = sample_df['vehid' == vid_option,'orderid' == oid_option]
+st.write(option_df)
+st.map(option_df)
